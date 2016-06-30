@@ -1,0 +1,38 @@
+﻿@model TaskManager.Models.Projects.ProjectsIndexViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a href="#" class="btn btn-lg btn-primary">Create new project</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Project name
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Created at
+            </th>
+            <th>
+                Updated at
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var project in Model.Projects)
+    {
+        <tr>
+            <td>@project.Name</td>
+            <td>@project.Status</td>
+            <td>@project.CreatedAt</td>
+            <td>@project.UpdatedAt</td>
+        </tr>
+    }
+    </tbody>
+</table>
